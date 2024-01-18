@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { useEffect } from "react";
 import { Kakarot } from "./compornents/Kakarot";
-import Main from "./Main";
 
 function Contents({ currentVolume, setCurrentVolume }) {
     const changeCurrentVolume = (index) => {

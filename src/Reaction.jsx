@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { useEffect, useRef, useState } from "react";
-import { Kakarot } from "./compornents/Kakarot";
-import Main from "./Main";
 
 function Reaction({ currentVolume, setCurrentVolume }) {
     const imgSrc = `../../reaction/reaction${currentVolume}.jpg`;
@@ -79,7 +77,7 @@ function Reaction({ currentVolume, setCurrentVolume }) {
     return (
         <>
             <div css={imgWrap} className="imgWrap">
-                <img ref={imgRef} src={imgSrc} css={img} />
+                <img ref={imgRef} src={imgSrc} css={img} alt="リアクション" />
                 <button css={closedButton} onClick={close}>×</button>
             </div>
         </>
