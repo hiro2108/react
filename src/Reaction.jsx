@@ -2,12 +2,11 @@
 import { css } from "@emotion/react";
 import { useEffect, useRef, useState } from "react";
 
-function Reaction({ currentVolume, setCurrentVolume }) {
+function Reaction({ currentVolume }) {
     const imgSrc = `../../reaction/reaction${currentVolume}.jpg`;
 
     const imgRef = useRef(null);
     const [bottom, setBottom] = useState(0);
-    const [opacity, setOpacity] = useState(0);
     const [transition, setTransition] = useState('bottom 1s');
     const [imgWrapClose, setImgWrapClose] = useState({ opacity: 1 });
 
@@ -17,17 +16,14 @@ function Reaction({ currentVolume, setCurrentVolume }) {
 
     useEffect(() => {
         setTransition('none');
-        setOpacity(0);
         setBottom(-imgRef.current.offsetHeight);
         setTimeout(() => {
-            setOpacity(1);
             setBottom(8);
             setTransition('bottom 1s');
         }, 1000);
     }, [currentVolume]);
 
     const close = () => {
-        console.log("success");
         setImgWrapClose({ opacity: 0 });
     };
     useEffect(() => {
